@@ -1,4 +1,4 @@
-using System;
+﻿using System;
 using UnityEngine;
 
 namespace LifeGame3D.Camera
@@ -24,11 +24,11 @@ namespace LifeGame3D.Camera
 
         private void Update()
         {
-            if(!_enable) return;
-            
+            if (!_enable) return;
+
             var frameCount = Time.frameCount;
             if (frameCount % timing != 0) return;
-            
+
             var pos = transform.position;
             transform.position = new Vector3(_position.x, _position.y + frameCount, _position.z);
         }

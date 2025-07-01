@@ -8,4 +8,10 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/LifeGameTowerCubeSample/LifeGameTowerCubeSample.unity
     guid: 99c9720ab356a0642a771bea13969a05
-  m_configObjects: {}
+  m_configObjects:
+    com.unity.xr.arfoundation.simulation_settings: {fileID: 11400000, guid: 581ac474c59f46643a35e460cb10b325,
+      type: 2}
+    com.unity.xr.management.loader_settings: {fileID: 11400000, guid: 44fa0779a28f88e4fa6c57800d53b3c8,
+      type: 2}
+    com.unity.xr.openxr.settings4: {fileID: 11400000, guid: e61f80f3aec8d2c4b95bcdf260e46bab,
+      type: 2}
