@@ -1,4 +1,4 @@
-using Unity.Burst;
+﻿using Unity.Burst;
 using Unity.Collections;
 using Unity.Collections.LowLevel.Unsafe;
 using Unity.Jobs;
@@ -14,7 +14,7 @@ namespace LifeGame3D.Job
         public BatchID m_BatchID;
         public uint kNumInstances;
 
-        [NativeDisableUnsafePtrRestriction] 
+        [NativeDisableUnsafePtrRestriction]
         public BatchCullingOutputDrawCommands* drawCommands;
 
         public void Execute(int index)

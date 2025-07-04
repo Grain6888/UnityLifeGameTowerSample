@@ -1,4 +1,4 @@
-using Unity.Burst;
+﻿using Unity.Burst;
 using Unity.Collections;
 using Unity.Collections.LowLevel.Unsafe;
 using Unity.Jobs;
@@ -13,17 +13,17 @@ namespace LifeGame3D.Job
     {
         [ReadOnly, NativeDisableContainerSafetyRestriction]
         public DataChunk input;
-        
+
         [WriteOnly, NativeDisableContainerSafetyRestriction]
         public DataChunk output;
 
         public void Execute(int i)
         {
             input.GetIndex(i, out int x, out _, out int z);
-            
+
             if (x - 1 < 0 || z - 1 < 0 ||
                 x + 1 >= input.xLength || z + 1 >= input.zLength) return;
-            
+
             int sum = 0;
             // 周囲8ピクセルの探索
             for (int xx = -1; xx <= 1; xx++)
@@ -51,14 +51,14 @@ namespace LifeGame3D.Job
             {
                 if (sum == 2 || sum == 3)
                 {
-                    output.AddFlag( i, LifeGameFlags.Alive);
+                    output.AddFlag(i, LifeGameFlags.Alive);
                 }
             }
-            else 
+            else
             {
                 if (sum == 3)
                 {
-                    output.AddFlag( i, LifeGameFlags.Alive);
+                    output.AddFlag(i, LifeGameFlags.Alive);
                 }
             }
         }
